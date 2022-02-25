@@ -19,6 +19,7 @@ Cart.prototype.removeItem = function(item) {
   // Note: You will have to decide what kind of parameter to pass in here!
 };
 
+
 const CartItem = function(product, quantity) {
   this.product = product;
   this.quantity = quantity;

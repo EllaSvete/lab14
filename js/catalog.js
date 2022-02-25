@@ -42,18 +42,29 @@ function addSelectedItemToCart() {
   // Done: suss out the item picked from the select list
   let selectListItem = document.getElementById('items').value;
   // Done: get the quantity
-  let selectListQuantity = document.getElementById('items').value;
+  let selectListQuantity = document.getElementById('quantity').value;
   // Done: using those, add one item to the Cart
   cart.addItem(selectListItem, selectListQuantity);
+  updateCounter(cart);
 }
 
-// TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {
+// Done: Update the cart count in the header nav with the number of items in the Cart
+function updateCounter(theCart) {
+
+  let counter = document.getElementById('itemCount')
+  counter.textContent = '('+ theCart.items.length +')'
 
 }
 
-// TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
+// DONE: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
+  let selectListItem = document.getElementById('items').value;
+  let selectListQuantity = document.getElementById('quantity').value;
+  let cartContents = document.getElementById('cartContents');
+  let newP = document.createElement('p');
+  newP.textContent = `${selectListItem}: ${selectListQuantity}`;
+  cartContents.appendChild(newP);
+  
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }
